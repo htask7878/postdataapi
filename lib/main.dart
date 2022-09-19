@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'first.dart';
+
 void main() {
   runApp(MaterialApp(
     home: home(),
@@ -48,8 +50,12 @@ class _homeState extends State<home> {
                 print("${m['job']}");
                 print("${m['id']}");
                 print("${m['createdAt']}");
+                print("");
                 t1.text="";
                 t2.text="";
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return first();
+                },));
               },
               child: Text("Insert"))
         ],
@@ -57,20 +63,3 @@ class _homeState extends State<home> {
     );
   }
 }
-/*
-FutureBuilder(
-          future: postdata(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return ListView.builder(
-                itemCount: 1,
-                itemBuilder: (context, index) {
-                  return Container();
-                },
-              );
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
-        )
-*/
