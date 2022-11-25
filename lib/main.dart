@@ -54,7 +54,7 @@ class _homeState extends State<home> {
                 t1.text="";
                 t2.text="";
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return first();
+                  return first(m['name'],m['job']);
                 },));
               },
               child: Text("Insert"))
